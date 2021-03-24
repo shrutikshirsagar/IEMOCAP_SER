@@ -25,5 +25,5 @@ for path1 in os.listdir(labels_input):
         a = i.replace("\t", ";")
         out2.append(a)
     print(out2)    
-    df = pd.DataFrame(out2)
+    df = pd.DataFrame([sub.split(";") for sub in out2])
     df.to_csv(output+path1.split('.')[0]+'.csv', index=False)
